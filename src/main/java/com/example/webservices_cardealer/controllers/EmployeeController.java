@@ -20,7 +20,7 @@ public class EmployeeController {
     @Autowired
     private EmployeeService employeeService;
 
-    //@Secured("ROLE_ADMIN")
+    @Secured("ROLE_ADMIN")
     @GetMapping
     public ResponseEntity<List<Employee>> findAllEmployees(@RequestParam(required = false) String name,
                                                            @RequestParam(required = false) String lastname,
@@ -30,26 +30,26 @@ public class EmployeeController {
         return ResponseEntity.ok(employeeService.findAllEmployees(name, lastname, email, phone, sort));
     }
 
-    //@Secured("ROLE_ADMIN")
+    @Secured("ROLE_ADMIN")
     @GetMapping("/{id}")
     public ResponseEntity<Employee> findEmployeeById(@PathVariable String id) {
         return ResponseEntity.ok(employeeService.findById(id));
     }
 
-    //@Secured("ROLE_ADMIN")
+    @Secured("ROLE_ADMIN")
     @PostMapping
     public ResponseEntity<Employee> saveEmployee(@Validated @RequestBody Employee employee) {
         return ResponseEntity.ok(employeeService.saveEmployee(employee));
     }
 
-    //@Secured("ROLE_ADMIN")
+    @Secured("ROLE_ADMIN")
     @PutMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void updateEmployee(@PathVariable String id, @RequestBody Employee employee) {
         employeeService.updateEmployee(id, employee);
     }
 
-    //@Secured("ROLE_ADMIN")
+    @Secured("ROLE_ADMIN")
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void deleteEmployee(@PathVariable String id) {
