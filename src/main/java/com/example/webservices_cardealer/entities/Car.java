@@ -4,14 +4,10 @@ import lombok.Builder;
 import lombok.Data;
 import org.springframework.data.annotation.Id;
 
-import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Pattern;
-import javax.validation.constraints.Size;
+import javax.validation.constraints.*;
 import java.io.Serializable;
 
 @Data
-@Builder
 public class Car implements Serializable {
     private static final long serialVersionUID = -1119146907465745507L;
     @Id
@@ -36,7 +32,6 @@ public class Car implements Serializable {
 //    @NotNull(message = "Tires cannot be null")
     private Tires tires;
     private boolean isSold;
-    private boolean isInStock;
-    private boolean isScrapped;
+    private boolean isInStock = true;
     private boolean isReserved;
 }
