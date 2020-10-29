@@ -1,0 +1,4 @@
+- CRUD for Tires
+- CRUD for Engine
+- Service for both
+- Controller for both
