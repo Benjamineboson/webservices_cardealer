@@ -24,6 +24,7 @@ public class EmployeeService {
 
     private final EmployeeRepository employeeRepository;
     private final PasswordEncoder passwordEncoder;
+    private final EmployeeDetailsService employeeDetailsService;
 
     @Cacheable(value = "carCache")
     public List<Employee> findAllEmployees(String name, String lastname, String email, String username,
@@ -62,7 +63,7 @@ public class EmployeeService {
     }
 
    @Cacheable(value = "carCache", key = "#username")
-    public Employee findByUsername(String username) {
+   public Employee findByUsername(String username) {
         return employeeRepository.findByUsername(username).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND,
                String.format("Employee with this username %s. , could not be found", username)));
    }
@@ -74,13 +75,12 @@ public class EmployeeService {
    }
 
    @CachePut(value = "carCache", key = "#id")
-    public void updateEmployee(String id, Employee employee) {
+   public void updateEmployee(String id, Employee employee) {
         var isAdmin = SecurityContextHolder.getContext().getAuthentication().getAuthorities().stream()
                 .anyMatch(grantedAuthority -> grantedAuthority.getAuthority().toUpperCase().equals("ROLE_ADMIN"));
-        var isCurrentUser = SecurityContextHolder.getContext().getAuthentication().getName().toLowerCase()
-               .equals(employee.getUsername().toLowerCase());
+        var isCurrentUser = employeeDetailsService.getCurrentUser();
 
-       if (!isAdmin && !isCurrentUser) {
+       if (!isAdmin && !isCurrentUser.toLowerCase().equals(employee.getUsername().toLowerCase())) {
            throw new ResponseStatusException(HttpStatus.UNAUTHORIZED, "You can only update your own details.");
        }
        if(!employeeRepository.existsById(id)){
