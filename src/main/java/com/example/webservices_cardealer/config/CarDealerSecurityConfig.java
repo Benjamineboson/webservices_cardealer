@@ -34,7 +34,7 @@ public class CarDealerSecurityConfig extends WebSecurityConfigurerAdapter {
                 .csrf().disable()
                 .authorizeRequests()
                 .antMatchers("/api/v1/dealer").permitAll()
-                //.antMatchers("/**").authenticated()
+                .antMatchers("/**").authenticated()
                 .and()
                 .httpBasic().authenticationEntryPoint(entryPoint)
                 .and()
