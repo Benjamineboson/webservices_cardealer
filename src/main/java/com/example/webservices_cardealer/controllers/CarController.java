@@ -19,6 +19,7 @@ public class CarController {
     @Autowired
     private CarService carService;
 
+    @Secured({"ROLE_ADMIN","ROLE_EMPLOYEE"})
     @GetMapping
     public ResponseEntity<List<Car>> findAllCars (@RequestParam(required = false) String registrationNumber, @RequestParam(required = false) String brand,
                                                   @RequestParam(required = false) String model, @RequestParam(required = false) String color,
@@ -26,17 +27,26 @@ public class CarController {
         return ResponseEntity.ok(carService.findAllCars(registrationNumber,brand,model,color,sortOnBrand));
     }
 
+    @Secured({"ROLE_ADMIN","ROLE_EMPLOYEE"})
+    @GetMapping("/{id}")
+    public ResponseEntity<Car> findCarById(@PathVariable String id) {
+        return ResponseEntity.ok(carService.findCarById(id));
+    }
+
+    @Secured("ROLE_ADMIN")
     @PostMapping
     public ResponseEntity<Car> saveNewCar (@Validated @RequestBody Car car){
         return ResponseEntity.ok(carService.saveNewCar(car));
     }
 
+    @Secured("ROLE_ADMIN")
     @PutMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void updateCar(@PathVariable String id, @RequestBody Car car){
         carService.updateCar(id,car);
     }
 
+    @Secured("ROLE_ADMIN")
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void updateCar(@PathVariable String id){

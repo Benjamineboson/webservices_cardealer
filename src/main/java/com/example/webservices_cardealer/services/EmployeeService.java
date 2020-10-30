@@ -29,6 +29,7 @@ public class EmployeeService {
     @Cacheable(value = "carCache")
     public List<Employee> findAllEmployees(String name, String lastname, String email, String username,
                                            boolean birthdate){
+        System.out.println("Fresh Employee data..."); // use only under development...
         var employees = employeeRepository.findAll();
         if (name != null){
             employees = employees.stream()

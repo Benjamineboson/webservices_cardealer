@@ -4,6 +4,8 @@ import com.example.webservices_cardealer.entities.Car;
 import com.example.webservices_cardealer.repositories.CarRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.CachePut;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
@@ -19,7 +21,9 @@ public class CarService {
     @Autowired
     private CarRepository carRepository;
 
+    @Cacheable(value = "carCache")
     public List<Car> findAllCars(String registrationNumber,String brand,String model,String color,boolean sortOnBrand){
+        System.out.println("Fresh Car data..."); // use only under development...
         var carList = carRepository.findAll();
         if (registrationNumber != null){
             carList = carList.stream().filter(car -> car.getRegistrationNumber().toLowerCase().equals(registrationNumber.toLowerCase()))
@@ -43,12 +47,19 @@ public class CarService {
         return carList;
     }
 
+    @Cacheable(value = "carCache", key = "#id")
+    public Car findCarById(String id) {
+        return carRepository.findById(id).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND,
+                String.format("Car with this id %s. , could not be found", id)));
+    }
+
+
+    @CachePut(value = "carCache", key = "#result.carId")
     public Car saveNewCar(Car car){
         return carRepository.save(car);
     }
 
-
-    @CacheEvict(value = "userCache",key="#id")
+    @CachePut(value = "carCache", key = "#id")
     public void updateCar(String id, Car car){
         if (!carRepository.existsById(id)){
             throw new ResponseStatusException(HttpStatus.NOT_FOUND,String.format("Could not find car with id %s",id));
@@ -57,6 +68,7 @@ public class CarService {
         carRepository.save(car);
     }
 
+    @CacheEvict(value = "userCache",key="#id")
     public void deleteCar (String id){
         if (!carRepository.existsById(id)){
             throw new ResponseStatusException(HttpStatus.NOT_FOUND,
