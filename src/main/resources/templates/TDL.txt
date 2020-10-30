@@ -20,12 +20,19 @@ X Det ska finnas minst 4 entiteter
   terminalen (command line).
 
 
-  Bilhandlaren ska kunna lägga upp nya bilar till salu i deras system, uppdatera och
-  radera befintliga. Det ska gå att hämta specifika bilar baserat på ett
-  registreringsnummer. Det ska även gå att hämta alla bilar som finns i systemet samt
-  filtrera sökresultatet. Vissa funktioner ska vara begränsade för högre behörigheter.
-  Kunder ska kunna söka i systemet utan att vara inloggade men dem ska inte kunna se
-  all data om bilarna. Personal som söker ska se allt, personal med högre behörighet så
-  som vd, avdelningschefer och andra med adminbehörighet ska kunna ändra, lägga till
-  och radera data. Det ska finnas status på bilar (ex. i lager, såld, reserverad, skrotad).
+  - Bilhandlaren ska kunna lägga upp nya bilar till salu i deras system, uppdatera och
+  radera befintliga.
+
+  - Det ska gå att hämta specifika bilar baserat på ett registreringsnummer.
+
+  - Det ska även gå att hämta alla bilar som finns i systemet samt filtrera sökresultatet.
+
+  - Vissa funktioner ska vara begränsade för högre behörigheter.
+
+  - Kunder ska kunna söka i systemet utan att vara inloggade men dem ska inte kunna se all data om bilarna.
+
+  - Personal som söker ska se allt, personal med högre behörighet så som vd, avdelningschefer och andra med
+    adminbehörighet ska kunna ändra, lägga till och radera data.
+
+  - Det ska finnas status på bilar (ex. i lager, såld, reserverad, skrotad).
 
