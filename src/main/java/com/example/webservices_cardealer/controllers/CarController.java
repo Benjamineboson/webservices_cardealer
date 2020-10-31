@@ -49,7 +49,7 @@ public class CarController {
     @Secured("ROLE_ADMIN")
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void updateCar(@PathVariable String id){
+    public void deleteCar(@PathVariable String id){
         carService.deleteCar(id);
     }
 
