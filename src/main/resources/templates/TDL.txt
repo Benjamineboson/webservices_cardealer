@@ -35,3 +35,7 @@ X Det ska finnas minst 4 entiteter
 
   - Det ska finnas status på bilar (ex. i lager, såld, reserverad, skrotad).
 
+  - Add cascade functionality for deleting an engine or tires. If engine/tires are deleted - remove from relevant cars.
+
+  - Add functionality for creating a new engine/tires through saveNewCar method.
+
