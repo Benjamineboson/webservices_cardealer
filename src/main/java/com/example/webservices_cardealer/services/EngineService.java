@@ -1,11 +1,11 @@
 package com.example.webservices_cardealer.services;
 
-import com.example.webservices_cardealer.entities.Car;
 import com.example.webservices_cardealer.entities.Engine;
 import com.example.webservices_cardealer.repositories.EngineRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.CachePut;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
@@ -20,7 +20,9 @@ public class EngineService {
     @Autowired
     private EngineRepository engineRepository;
 
+    @Cacheable(value = "carCache")
     public List<Engine> findAllEngines(String brand,String model,String cylinders,String fuelType, boolean sortOnBrand){
+        System.out.println("Fresh Engines data..."); // use only under development...
         var engineList = engineRepository.findAll();
 
         if (brand != null){
@@ -45,15 +47,18 @@ public class EngineService {
         return engineList;
     }
 
+    @Cacheable(value = "carCache", key = "#id")
     public Engine findEngineById(String id){
         return engineRepository.findById(id).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND,
                 String.format("Engine with this id %s. , could not be found", id)));
     }
 
+    @CachePut(value = "carCache", key = "#result.engineId")
     public Engine saveNewEngine(Engine engine){
         return engineRepository.save(engine);
     }
 
+    @CachePut(value = "carCache", key = "#id")
     public void updateEngine(String id, Engine engine){
         if (!engineRepository.existsById(id)){
             throw new ResponseStatusException(HttpStatus.NOT_FOUND,String.format("Could not find engine with id %s",id));
@@ -62,6 +67,7 @@ public class EngineService {
         engineRepository.save(engine);
     }
 
+    @CacheEvict(value = "carCache",key="#id")
     public void deleteEngine (String id){
         if (!engineRepository.existsById(id)){
             throw new ResponseStatusException(HttpStatus.NOT_FOUND,
