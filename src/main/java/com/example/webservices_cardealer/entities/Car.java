@@ -1,13 +1,19 @@
 package com.example.webservices_cardealer.entities;
 
+import jdk.jfr.BooleanFlag;
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Id;
 
 import javax.validation.constraints.*;
 import java.io.Serializable;
 
 @Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class Car implements Serializable {
     private static final long serialVersionUID = -1119146907465745507L;
     @Id
@@ -32,6 +38,9 @@ public class Car implements Serializable {
 //    @NotNull(message = "Tires cannot be null")
     private Tires tires;
     private boolean isSold;
-    private boolean isInStock = true;
+    @BooleanFlag
+    @NotNull
+    @AssertTrue
+    private boolean isInStock;
     private boolean isReserved;
 }

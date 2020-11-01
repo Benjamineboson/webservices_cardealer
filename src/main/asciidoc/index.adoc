@@ -1,0 +1,109 @@
+= WebService CarDealer
+Benjamin Boson, Oscar Johanneson
+:doctype: book
+:icons: font
+:source-highlighter: highlightjs
+
+`CarController`
+
+GET CARS
+
+One showing how to make a request using cUrl:
+
+include::{snippets}/v1/cars-get-all/curl-request.adoc[]
+
+One showing HTTP request:
+
+include::{snippets}/v1/cars-get-all/http-request.adoc[]
+
+And one showing the HTTP response:
+
+include::{snippets}/v1/cars-get-all/http-response.adoc[]
+
+Response Body:
+
+include::{snippets}/v1/cars-get-all/response-body.adoc[]
+
+GET CAR
+
+One showing how to make a request using cURL:
+
+include::{snippets}/v1/cars-get-one/curl-request.adoc[]
+
+One showing the HTTP request:
+
+include::{snippets}/v1/cars-get-one/http-request.adoc[]
+
+And one showing the HTTP response:
+
+include::{snippets}/v1/cars-get-one/http-response.adoc[]
+
+Response Body:
+
+include::{snippets}/v1/cars-get-one/response-body.adoc[]
+
+Response Fields:
+
+include::{snippets}/v1/cars-get-one/response-fields.adoc[]
+
+SAVE CAR
+
+One showing how to make a request using cURL:
+
+include::{snippets}/v1/car-new/curl-request.adoc[]
+
+One showing the HTTP request:
+
+include::{snippets}/v1/car-new/http-request.adoc[]
+
+And one showing the HTTP response:
+
+include::{snippets}/v1/car-new/http-response.adoc[]
+
+Response Body:
+include::{snippets}/v1/car-new/response-body.adoc[]
+
+Request Fields:
+
+include::{snippets}/v1/car-new/request-fields.adoc[]
+
+Response Fields:
+
+include::{snippets}/v1/car-new/response-fields.adoc[]
+
+UPDATE CAR
+
+One showing how to make a request using cURL:
+
+include::{snippets}/v1/car-update/curl-request.adoc[]
+
+One showing the HTTP request:
+
+include::{snippets}/v1/car-update/http-request.adoc[]
+
+And one showing the HTTP response:
+
+include::{snippets}/v1/car-update/http-response.adoc[]
+
+Request Fields
+include::{snippets}/v1/car-update/request-fields.adoc[]
+
+DELETE CAR
+
+One showing how to make a request using cURL:
+
+include::{snippets}/v1/car-delete/curl-request.adoc[]
+
+One showing the HTTP request:
+
+include::{snippets}/v1/car-delete/http-request.adoc[]
+
+And one showing the HTTP response:
+
+include::{snippets}/v1/car-delete/http-response.adoc[]
+
+`EmployeeController`
+
+`EngineController`
+
+`TiresController`
