@@ -1,6 +1,6 @@
 package com.example.webservices_cardealer.entities;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import jdk.jfr.BooleanFlag;
 import lombok.Builder;
 import lombok.Data;
 import org.springframework.data.annotation.Id;
@@ -32,6 +32,9 @@ public class Car implements Serializable {
     private Engine engine;
     private Tires tires;
     private boolean isSold;
-    private boolean isInStock = true;
+    @BooleanFlag
+    @NotNull
+    @AssertTrue
+    private boolean isInStock;
     private boolean isReserved;
 }

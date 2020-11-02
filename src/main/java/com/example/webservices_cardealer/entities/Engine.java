@@ -1,7 +1,9 @@
 package com.example.webservices_cardealer.entities;
 
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Id;
 
 import javax.validation.constraints.NotEmpty;
@@ -10,6 +12,8 @@ import java.io.Serializable;
 
 @Data
 @Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class Engine implements Serializable {
     private static final long serialVersionUID = 7276958240792417446L;
 
