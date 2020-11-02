@@ -11,15 +11,23 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.restdocs.AutoConfigureRestDocs;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
+import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.http.MediaType;
 import org.springframework.restdocs.RestDocumentationContextProvider;
 import org.springframework.restdocs.RestDocumentationExtension;
 import org.springframework.restdocs.constraints.ConstraintDescriptions;
 import org.springframework.restdocs.payload.FieldDescriptor;
+import org.springframework.security.test.context.support.WithMockUser;
+import org.springframework.security.test.web.servlet.setup.SecurityMockMvcConfigurers;
+import org.springframework.stereotype.Component;
+import org.springframework.test.context.ActiveProfiles;
+import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.StringUtils;
 import org.springframework.web.context.WebApplicationContext;
 
@@ -31,6 +39,7 @@ import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.BDDMockito.given;
 import static org.springframework.restdocs.mockmvc.MockMvcRestDocumentation.document;
 import static org.springframework.restdocs.mockmvc.MockMvcRestDocumentation.documentationConfiguration;
+import static org.springframework.security.test.web.servlet.setup.SecurityMockMvcConfigurers.springSecurity;
 import static org.springframework.restdocs.mockmvc.RestDocumentationRequestBuilders.*;
 import static org.springframework.restdocs.payload.PayloadDocumentation.*;
 import static org.springframework.restdocs.request.RequestDocumentation.parameterWithName;
@@ -38,25 +47,29 @@ import static org.springframework.restdocs.request.RequestDocumentation.pathPara
 import static org.springframework.restdocs.snippet.Attributes.key;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
-@WebMvcTest
+@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.DEFINED_PORT)
+@ExtendWith(RestDocumentationExtension.class)
 @AutoConfigureRestDocs(uriPort = 3000)
-@ExtendWith({RestDocumentationExtension.class, SpringExtension.class})
 public class CarControllerTest {
-    @Autowired
+
     private MockMvc mockMvc;
     @Autowired
     private ObjectMapper objectMapper;
     @MockBean
     private CarRepository carRepository;
 
+
     @BeforeEach
-    public void setUp(WebApplicationContext webApplicationContext,
-                      RestDocumentationContextProvider restDocumentation) {
+    public void setUp(WebApplicationContext webApplicationContext, RestDocumentationContextProvider restDocumentation) {
         this.mockMvc = MockMvcBuilders.webAppContextSetup(webApplicationContext)
-                .apply(documentationConfiguration(restDocumentation)).build();
+                .apply(documentationConfiguration(restDocumentation))
+                .apply(SecurityMockMvcConfigurers.springSecurity())
+                .build();
     }
 
+
     @Test
+    @WithMockUser(value = "admin",roles = {"ADMIN"})
     void findAllCars() throws Exception {
         given(carRepository.findAll()).willReturn(List.of(Car.builder().build()));
 
@@ -66,6 +79,7 @@ public class CarControllerTest {
     }
 
     @Test
+    @WithMockUser(value = "admin",roles = {"ADMIN"})
     void findCarById() throws Exception {
         given(carRepository.findById(any())).willReturn(Optional.of(Car.builder().build()));
 
@@ -84,17 +98,21 @@ public class CarControllerTest {
                                 fieldWithPath("yearModel").description("Year the of creation"),
                                 fieldWithPath("engine").description("Car engine type").type(Engine.class),
                                 fieldWithPath("tires").description("Car tires type").type(Tires.class),
-                                fieldWithPath("isSold").description("true/false"),
-                                fieldWithPath("isInStock").description("true/false"),
-                                fieldWithPath("isReserved").description("true/false")
+                                fieldWithPath("sold").description("true/false"),
+                                fieldWithPath("inStock").description("true/false"),
+                                fieldWithPath("reserved").description("true/false")
                         )));
     }
 
     @Test
+    @WithMockUser(value = "admin",roles = {"ADMIN"})
     void saveCar() throws Exception {
         Car car = getValidCar();
+        car.setCarId(null);
         String carJson = objectMapper.writeValueAsString(car);
+
         given(carRepository.save(any())).willReturn(Car.builder().build());
+
         ConstrainedFields fields = new ConstrainedFields(Car.class);
 
         mockMvc.perform(post("/api/v1/dealer/cars")
@@ -111,9 +129,9 @@ public class CarControllerTest {
                                 fields.withPath("yearModel").description("Year of the creation"),
                                 fields.withPath("engine").description("Car engine type"),
                                 fields.withPath("tires").description("Car tires type"),
-                                fields.withPath("isSold").description("true/false"),
-                                fields.withPath("isInStock").description("true/false"),
-                                fields.withPath("isReserved").description("true/false")
+                                fields.withPath("sold").description("true/false"),
+                                fields.withPath("inStock").description("true/false"),
+                                fields.withPath("reserved").description("true/false")
                         ),
                         responseFields(
                                 fieldWithPath("carId").description("Car ID"),
@@ -124,17 +142,20 @@ public class CarControllerTest {
                                 fieldWithPath("yearModel").description("Year the of creation"),
                                 fieldWithPath("engine").description("Car engine type").type(Engine.class),
                                 fieldWithPath("tires").description("Car tires type").type(Tires.class),
-                                fieldWithPath("isSold").description("true/false"),
-                                fieldWithPath("isInStock").description("true/false"),
-                                fieldWithPath("isReserved").description("true/false")
+                                fieldWithPath("sold").description("true/false"),
+                                fieldWithPath("inStock").description("true/false"),
+                                fieldWithPath("reserved").description("true/false")
                         )));
     }
 
     @Test
+    @WithMockUser(value = "admin",roles = {"ADMIN"})
     void updateCar() throws Exception {
         Car car = getValidCar();
         String carJson = objectMapper.writeValueAsString(car);
         ConstrainedFields fields = new ConstrainedFields(Car.class);
+
+        given(carRepository.existsById(any())).willReturn(true);
 
         mockMvc.perform(put("/api/v1/dealer/cars/{id}", UUID.randomUUID().toString())
                 .contentType(MediaType.APPLICATION_JSON)
@@ -153,14 +174,16 @@ public class CarControllerTest {
                                 fields.withPath("yearModel").description("Year of the creation"),
                                 fields.withPath("engine").description("Car engine type"),
                                 fields.withPath("tires").description("Car tires type"),
-                                fields.withPath("isSold").description("true/false"),
-                                fields.withPath("isInStock").description("true/false"),
-                                fields.withPath("isReserved").description("true/false")
+                                fields.withPath("sold").description("true/false"),
+                                fields.withPath("inStock").description("true/false"),
+                                fields.withPath("reserved").description("true/false")
                         )));
     }
 
     @Test
+    @WithMockUser(value = "admin",roles = {"ADMIN"})
     void deleteCar() throws Exception {
+        given(carRepository.existsById(any())).willReturn(true);
         mockMvc.perform(delete("/api/v1/dealer/cars/{id}", UUID.randomUUID().toString()).accept(MediaType.APPLICATION_JSON))
                 .andExpect(status().isNoContent())
                 .andDo(document("v1/car-delete", pathParameters(
@@ -170,23 +193,12 @@ public class CarControllerTest {
 
     Car getValidCar() {
         return Car.builder()
-                .registrationNumber("ABC 123")
+                .carId(UUID.randomUUID().toString())
+                .registrationNumber("ABC123")
                 .brand("Volvo")
                 .model("V90")
                 .color("Black")
                 .yearModel("2020")
-                .engine(Engine.builder()
-                        .brand("Volvo D5")
-                        .model("D5")
-                        .cylinders("4")
-                        .fuelType("Petrol")
-                        .build())
-                .tires(Tires.builder()
-                        .brand("Micheline")
-                        .dimension("x17")
-                        .tireType("All Round")
-                        .yearModel("2020")
-                        .build())
                 .isSold(false)
                 .isInStock(true)
                 .isReserved(false)

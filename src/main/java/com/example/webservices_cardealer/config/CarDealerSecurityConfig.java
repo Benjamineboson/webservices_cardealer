@@ -12,11 +12,13 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.AuthenticationEntryPoint;
+import org.springframework.stereotype.Component;
 
 @Configuration
 @EnableWebSecurity
 @EnableGlobalMethodSecurity(securedEnabled = true)
 public class CarDealerSecurityConfig extends WebSecurityConfigurerAdapter {
+
     @Autowired
     private AuthenticationEntryPoint entryPoint;
     @Autowired
@@ -33,6 +35,7 @@ public class CarDealerSecurityConfig extends WebSecurityConfigurerAdapter {
                 .formLogin().disable()
                 .csrf().disable()
                 .authorizeRequests()
+                .antMatchers("/").permitAll()
                 .antMatchers("/api/v1/dealer").permitAll()
                 .antMatchers("/**").authenticated()
                 .and()

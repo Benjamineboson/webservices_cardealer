@@ -8,6 +8,7 @@ import org.springframework.cache.annotation.CachePut;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.server.ResponseStatusException;
 
 import java.util.Comparator;
@@ -85,7 +86,7 @@ public class CarService {
     }
 
 
-    @CachePut(value = "carCache", key = "#result.carId")
+    @CachePut(value = "carCache")
     public Car saveNewCar(Car car){
         car.setInStock(true);
         return carRepository.save(car);

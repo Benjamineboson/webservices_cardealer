@@ -12,7 +12,7 @@ X Det ska finnas minst 4 entiteter
 X Man ska kunna söka på fler entiteter än Car, t ex Engine, Gear,
 X Det ska gå att söka på en entitet med minst fyra parametrar
 X Alla entities ska valideras innan dem sparas i databas
-- API-dokumentation ska finnas
+X API-dokumentation ska finnas
 - Hemsidan/startsidan till er service ska presentera API-dokumentationen
 X Högre krav på att lämpliga HTTP-status koder returneras
 X Högre krav på säkerhet, t.ex. endast admin får spara till och radera från DB

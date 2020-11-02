@@ -2,16 +2,17 @@ package com.example.webservices_cardealer.controllers;
 
 import com.example.webservices_cardealer.entities.Car;
 import com.example.webservices_cardealer.services.CarService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.annotation.Secured;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
-import java.awt.print.Book;
+import java.net.URI;
 import java.util.List;
-
 @RestController
 @RequestMapping("/api/v1/dealer")
 public class CarController {
@@ -42,7 +43,9 @@ public class CarController {
     @Secured("ROLE_ADMIN")
     @PostMapping("/cars")
     public ResponseEntity<Car> saveNewCar (@Validated @RequestBody Car car){
-        return ResponseEntity.ok(carService.saveNewCar(car));
+        var savedCar = carService.saveNewCar(car);
+        var uri = URI.create("/api/v1/dealer/cars/"+savedCar.getCarId());
+        return ResponseEntity.created(uri).body(savedCar);
     }
 
     @Secured("ROLE_ADMIN")
