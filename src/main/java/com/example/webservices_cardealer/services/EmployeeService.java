@@ -54,7 +54,11 @@ public class EmployeeService {
         if (birthdate) {
             employees.sort(Comparator.comparing(Employee::getBirthdate));
         }
+        if (employees.isEmpty()){
+            throw new ResponseStatusException(HttpStatus.NO_CONTENT, "No employees found in the system");
+        }else {
             return employees;
+        }
     }
 
     @Cacheable(value = "carCache", key = "#id")

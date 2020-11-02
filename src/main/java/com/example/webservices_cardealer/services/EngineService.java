@@ -44,7 +44,11 @@ public class EngineService {
         if (sortOnBrand){
             engineList.sort(Comparator.comparing(Engine::getBrand));
         }
-        return engineList;
+        if (engineList.isEmpty()){
+            throw new ResponseStatusException(HttpStatus.NO_CONTENT, "No engines found in the system");
+        }else {
+            return engineList;
+        }
     }
 
     @Cacheable(value = "carCache", key = "#id")

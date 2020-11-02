@@ -14,7 +14,7 @@ X Det ska gå att söka på en entitet med minst fyra parametrar
 X Alla entities ska valideras innan dem sparas i databas
 - API-dokumentation ska finnas
 - Hemsidan/startsidan till er service ska presentera API-dokumentationen
-- Högre krav på att lämpliga HTTP-status koder returneras
+X Högre krav på att lämpliga HTTP-status koder returneras
 X Högre krav på säkerhet, t.ex. endast admin får spara till och radera från DB
 - Det ska finnas en distribuerad version (byggd jar-fil) som kan köras från
   terminalen (command line).
@@ -28,7 +28,7 @@ X Det ska även gå att hämta alla bilar som finns i systemet samt filtrera sö
 
 X Vissa funktioner ska vara begränsade för högre behörigheter.
 
-- Kunder ska kunna söka i systemet utan att vara inloggade men dem ska inte kunna se all data om bilarna.
+X Kunder ska kunna söka i systemet utan att vara inloggade men dem ska inte kunna se all data om bilarna.
 
 X Personal som söker ska se allt, personal med högre behörighet så som vd, avdelningschefer och andra med
   adminbehörighet ska kunna ändra, lägga till och radera data.

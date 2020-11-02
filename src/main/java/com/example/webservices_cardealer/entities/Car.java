@@ -1,5 +1,6 @@
 package com.example.webservices_cardealer.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Builder;
 import lombok.Data;
 import org.springframework.data.annotation.Id;
@@ -7,6 +8,7 @@ import org.springframework.data.annotation.Id;
 import javax.validation.constraints.*;
 import java.io.Serializable;
 
+@Builder
 @Data
 public class Car implements Serializable {
     private static final long serialVersionUID = -1119146907465745507L;

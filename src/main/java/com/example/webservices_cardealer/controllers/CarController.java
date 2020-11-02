@@ -13,14 +13,19 @@ import java.awt.print.Book;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/v1/dealer/cars")
+@RequestMapping("/api/v1/dealer")
 public class CarController {
 
     @Autowired
     private CarService carService;
 
-    @Secured({"ROLE_ADMIN","ROLE_EMPLOYEE"})
     @GetMapping
+    public ResponseEntity<List<Car>> findAllCarsGuest(){
+        return ResponseEntity.ok(carService.findAllCarsGuest());
+    }
+
+    @Secured({"ROLE_ADMIN","ROLE_EMPLOYEE"})
+    @GetMapping("/cars")
     public ResponseEntity<List<Car>> findAllCars (@RequestParam(required = false) String registrationNumber, @RequestParam(required = false) String brand,
                                                   @RequestParam(required = false) String model, @RequestParam(required = false) String color,
                                                   @RequestParam(required = false) String engineModel, @RequestParam(required = false) String tireBrand,
@@ -29,26 +34,26 @@ public class CarController {
     }
 
     @Secured({"ROLE_ADMIN","ROLE_EMPLOYEE"})
-    @GetMapping("/{id}")
+    @GetMapping("/cars/{id}")
     public ResponseEntity<Car> findCarById(@PathVariable String id) {
         return ResponseEntity.ok(carService.findCarById(id));
     }
 
     @Secured("ROLE_ADMIN")
-    @PostMapping
+    @PostMapping("/cars")
     public ResponseEntity<Car> saveNewCar (@Validated @RequestBody Car car){
         return ResponseEntity.ok(carService.saveNewCar(car));
     }
 
     @Secured("ROLE_ADMIN")
-    @PutMapping("/{id}")
+    @PutMapping("/cars/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void updateCar(@PathVariable String id, @RequestBody Car car){
         carService.updateCar(id,car);
     }
 
     @Secured("ROLE_ADMIN")
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/cars/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void deleteCar(@PathVariable String id){
         carService.deleteCar(id);

@@ -21,6 +21,24 @@ public class CarService {
     private CarRepository carRepository;
 
     @Cacheable(value = "carCache")
+    public List<Car> findAllCarsGuest() {
+        var carList = carRepository.findAll();
+        carList = carList.stream()
+                .map(car -> Car.builder().brand(car.getBrand())
+                        .model(car.getModel())
+                        .color(car.getColor())
+                        .yearModel(car.getYearModel())
+                        .isInStock(car.isInStock())
+                        .build())
+                .collect(Collectors.toList());
+        if (carList.isEmpty()){
+            throw new ResponseStatusException(HttpStatus.NO_CONTENT, "No cars found in the system");
+        }else {
+            return carList;
+        }
+    }
+
+    @Cacheable(value = "carCache")
     public List<Car> findAllCars(String registrationNumber,String brand,String model,String color,boolean sortOnBrand,String engineModel,String tireBrand){
         System.out.println("Fresh Car data..."); // use only under development...
         var carList = carRepository.findAll();
@@ -53,7 +71,11 @@ public class CarService {
                     .filter(car ->  car.getTires() != null && car.getTires().getBrand().toLowerCase().equals(tireBrand.toLowerCase()))
                     .collect(Collectors.toList());
         }
-        return carList;
+        if (carList.isEmpty()){
+            throw new ResponseStatusException(HttpStatus.NO_CONTENT, "No cars found in the system");
+        }else {
+            return carList;
+        }
     }
 
     @Cacheable(value = "carCache", key = "#id")
@@ -86,4 +108,5 @@ public class CarService {
         }
         carRepository.deleteById(id);
     }
+
 }

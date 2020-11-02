@@ -43,7 +43,11 @@ public class TiresService {
         if (sortOnBrand){
             tiresList.sort(Comparator.comparing(Tires::getBrand));
         }
-        return tiresList;
+        if (tiresList.isEmpty()){
+            throw new ResponseStatusException(HttpStatus.NO_CONTENT, "No tires found in the system");
+        }else {
+            return tiresList;
+        }
     }
 
     @Cacheable(value = "carCache", key = "#id")
