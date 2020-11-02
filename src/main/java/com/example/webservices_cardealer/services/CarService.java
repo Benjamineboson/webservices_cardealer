@@ -21,7 +21,7 @@ public class CarService {
     private CarRepository carRepository;
 
     @Cacheable(value = "carCache")
-    public List<Car> findAllCars(String registrationNumber,String brand,String model,String color,boolean sortOnBrand){
+    public List<Car> findAllCars(String registrationNumber,String brand,String model,String color,boolean sortOnBrand,String engineModel,String tireBrand){
         System.out.println("Fresh Car data..."); // use only under development...
         var carList = carRepository.findAll();
         if (registrationNumber != null){
@@ -43,6 +43,16 @@ public class CarService {
         if (sortOnBrand){
             carList.sort(Comparator.comparing(Car::getBrand));
         }
+        if (engineModel != null ){
+            carList = carList.stream()
+                    .filter(car -> car.getEngine() != null && car.getEngine().getModel().toLowerCase().equals(engineModel.toLowerCase()))
+                    .collect(Collectors.toList());
+        }
+        if (tireBrand != null){
+            carList = carList.stream()
+                    .filter(car ->  car.getTires() != null && car.getTires().getBrand().toLowerCase().equals(tireBrand.toLowerCase()))
+                    .collect(Collectors.toList());
+        }
         return carList;
     }
 
@@ -55,6 +65,7 @@ public class CarService {
 
     @CachePut(value = "carCache", key = "#result.carId")
     public Car saveNewCar(Car car){
+        car.setInStock(true);
         return carRepository.save(car);
     }
 

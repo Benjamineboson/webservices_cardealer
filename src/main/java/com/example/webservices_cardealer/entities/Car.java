@@ -27,9 +27,7 @@ public class Car implements Serializable {
     @NotEmpty(message = "Year model cannot be empty")
     @Pattern(regexp = "^\\d{4}$",message = "Invalid year. Valid year: YYYY")
     private String yearModel;
-//    @NotNull(message = "Engine cannot be null")
     private Engine engine;
-//    @NotNull(message = "Tires cannot be null")
     private Tires tires;
     private boolean isSold;
     private boolean isInStock = true;

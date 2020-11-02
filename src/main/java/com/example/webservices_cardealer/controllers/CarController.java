@@ -23,8 +23,9 @@ public class CarController {
     @GetMapping
     public ResponseEntity<List<Car>> findAllCars (@RequestParam(required = false) String registrationNumber, @RequestParam(required = false) String brand,
                                                   @RequestParam(required = false) String model, @RequestParam(required = false) String color,
+                                                  @RequestParam(required = false) String engineModel, @RequestParam(required = false) String tireBrand,
                                                   @RequestParam(required = false) boolean sortOnBrand){
-        return ResponseEntity.ok(carService.findAllCars(registrationNumber,brand,model,color,sortOnBrand));
+        return ResponseEntity.ok(carService.findAllCars(registrationNumber,brand,model,color,sortOnBrand,engineModel,tireBrand));
     }
 
     @Secured({"ROLE_ADMIN","ROLE_EMPLOYEE"})
