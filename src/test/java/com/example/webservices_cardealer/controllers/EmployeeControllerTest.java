@@ -39,9 +39,9 @@ import static org.springframework.restdocs.snippet.Attributes.key;
 import static org.springframework.restdocs.mockmvc.RestDocumentationRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
-@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.DEFINED_PORT)
+@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @ExtendWith(RestDocumentationExtension.class)
-@AutoConfigureRestDocs(uriPort = 3000)
+//@AutoConfigureRestDocs(uriPort = 3000)
 public class EmployeeControllerTest {
 
     private MockMvc mockMvc;
