@@ -30,7 +30,7 @@ public class Employee implements Serializable {
     @Size(min = 3, max = 10, message = "Firstname length invalid")
     private String firstname;
     @NotEmpty(message = "Lastname can not be empty")
-    @Size(min = 3, max = 10 , message = "Firstname length invalid")
+    @Size(min = 3, max = 10 , message = "Lastname length invalid")
     private String lastname;
     @Past
     @DateTimeFormat(pattern = "yyyy-MM-dd")

@@ -73,7 +73,7 @@ public class EmployeeService {
                String.format("Employee with this username %s. , could not be found", username)));
    }
 
-   @CachePut(value = "carCache", key = "#result.employeeId")
+   @CachePut(value = "carCache")
    public Employee saveEmployee(Employee employee) {
        employee.setPassword(passwordEncoder.encode(employee.getPassword()));
        return employeeRepository.save(employee);

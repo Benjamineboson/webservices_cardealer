@@ -104,6 +104,102 @@ include::{snippets}/v1/car-delete/http-response.adoc[]
 
 `EmployeeController`
 
+GET EMPLOYEEs
+
+One showing how to make a request using cUrl:
+
+include::{snippets}/v1/employees-get-all/curl-request.adoc[]
+
+One showing HTTP request:
+
+include::{snippets}/v1/employees-get-all/http-request.adoc[]
+
+And one showing the HTTP response:
+
+include::{snippets}/v1/employees-get-all/http-response.adoc[]
+
+Response Body:
+
+include::{snippets}/v1/employees-get-all/response-body.adoc[]
+
+GET EMPLOYEE
+
+One showing how to make a request using cURL:
+
+include::{snippets}/v1/employees-get-one/curl-request.adoc[]
+
+One showing the HTTP request:
+
+include::{snippets}/v1/employees-get-one/http-request.adoc[]
+
+And one showing the HTTP response:
+
+include::{snippets}/v1/employees-get-one/http-response.adoc[]
+
+Response Body:
+
+include::{snippets}/v1/employees-get-one/response-body.adoc[]
+
+Response Fields:
+
+include::{snippets}/v1/employees-get-one/response-fields.adoc[]
+
+SAVE EMPLOYEE
+
+One showing how to make a request using cURL:
+
+include::{snippets}/v1/employee-new/curl-request.adoc[]
+
+One showing the HTTP request:
+
+include::{snippets}/v1/employee-new/http-request.adoc[]
+
+And one showing the HTTP response:
+
+include::{snippets}/v1/employee-new/http-response.adoc[]
+
+Response Body:
+include::{snippets}/v1/employee-new/response-body.adoc[]
+
+Request Fields:
+
+include::{snippets}/v1/employee-new/request-fields.adoc[]
+
+Response Fields:
+
+include::{snippets}/v1/employee-new/response-fields.adoc[]
+
+UPDATE EMPLOYEE
+
+One showing how to make a request using cURL:
+
+include::{snippets}/v1/employee-update/curl-request.adoc[]
+
+One showing the HTTP request:
+
+include::{snippets}/v1/employee-update/http-request.adoc[]
+
+And one showing the HTTP response:
+
+include::{snippets}/v1/employee-update/http-response.adoc[]
+
+Request Fields
+include::{snippets}/v1/employee-update/request-fields.adoc[]
+
+DELETE EMPLOYEE
+
+One showing how to make a request using cURL:
+
+include::{snippets}/v1/employee-delete/curl-request.adoc[]
+
+One showing the HTTP request:
+
+include::{snippets}/v1/employee-delete/http-request.adoc[]
+
+And one showing the HTTP response:
+
+include::{snippets}/v1/employee-delete/http-response.adoc[]
+
 `EngineController`
 
 `TiresController`

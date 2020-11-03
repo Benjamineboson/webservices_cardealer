@@ -10,6 +10,7 @@ import org.springframework.security.access.annotation.Secured;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
+import java.net.URI;
 import java.util.List;
 
 @RestController
@@ -39,7 +40,9 @@ public class EmployeeController {
     @Secured("ROLE_ADMIN")
     @PostMapping
     public ResponseEntity<Employee> saveEmployee(@Validated @RequestBody Employee employee) {
-        return ResponseEntity.ok(employeeService.saveEmployee(employee));
+        var savedEmployee = employeeService.saveEmployee(employee);
+        var uri = URI.create("/api/v1/dealer/employees/" + savedEmployee.getEmployeeId());
+        return ResponseEntity.created(uri).body(savedEmployee);
     }
 
     @Secured("ROLE_ADMIN")
