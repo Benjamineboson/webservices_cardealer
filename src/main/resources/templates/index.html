@@ -501,7 +501,7 @@ Content-Length: 171
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://localhost:8080/api/v1/dealer/cars/8d9853be-3ecf-47a0-bb0b-fa3f7b18040a' -i -X GET \
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://localhost:8080/api/v1/dealer/cars/4c7a543b-b7e4-4e4f-a6f9-c7d3754a5dd7' -i -X GET \
     -H 'Accept: application/json'</code></pre>
 </div>
 </div>
@@ -510,7 +510,7 @@ Content-Length: 171
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">GET /api/v1/dealer/cars/8d9853be-3ecf-47a0-bb0b-fa3f7b18040a HTTP/1.1
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">GET /api/v1/dealer/cars/4c7a543b-b7e4-4e4f-a6f9-c7d3754a5dd7 HTTP/1.1
 Accept: application/json
 Host: localhost:8080</code></pre>
 </div>
@@ -819,9 +819,9 @@ Content-Length: 169
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://localhost:8080/api/v1/dealer/cars/5854a457-43c5-4c5c-816a-211c90e5e4eb' -i -X PUT \
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://localhost:8080/api/v1/dealer/cars/9285debd-8afb-435e-9037-e51992a0515e' -i -X PUT \
     -H 'Content-Type: application/json' \
-    -d '{"carId":"4c4f667c-d453-4ef4-bf29-94f424fcd747","registrationNumber":"ABC123","brand":"Volvo","model":"V90","color":"Black","yearModel":"2020","engine":null,"tires":null,"sold":false,"inStock":true,"reserved":false}'</code></pre>
+    -d '{"carId":"6bbd30c1-c22c-4bbb-93ae-661461166e35","registrationNumber":"ABC123","brand":"Volvo","model":"V90","color":"Black","yearModel":"2020","engine":null,"tires":null,"sold":false,"inStock":true,"reserved":false}'</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -829,12 +829,12 @@ Content-Length: 169
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">PUT /api/v1/dealer/cars/5854a457-43c5-4c5c-816a-211c90e5e4eb HTTP/1.1
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">PUT /api/v1/dealer/cars/9285debd-8afb-435e-9037-e51992a0515e HTTP/1.1
 Content-Type: application/json
 Content-Length: 215
 Host: localhost:8080
 
-{"carId":"4c4f667c-d453-4ef4-bf29-94f424fcd747","registrationNumber":"ABC123","brand":"Volvo","model":"V90","color":"Black","yearModel":"2020","engine":null,"tires":null,"sold":false,"inStock":true,"reserved":false}</code></pre>
+{"carId":"6bbd30c1-c22c-4bbb-93ae-661461166e35","registrationNumber":"ABC123","brand":"Volvo","model":"V90","color":"Black","yearModel":"2020","engine":null,"tires":null,"sold":false,"inStock":true,"reserved":false}</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -928,7 +928,7 @@ X-Frame-Options: DENY</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://localhost:8080/api/v1/dealer/cars/896de655-fa6a-42cb-9637-075f080c2cdd' -i -X DELETE \
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://localhost:8080/api/v1/dealer/cars/31e4d85a-67c0-40d2-9d88-240ff17ad7ba' -i -X DELETE \
     -H 'Accept: application/json'</code></pre>
 </div>
 </div>
@@ -937,7 +937,7 @@ X-Frame-Options: DENY</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">DELETE /api/v1/dealer/cars/896de655-fa6a-42cb-9637-075f080c2cdd HTTP/1.1
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">DELETE /api/v1/dealer/cars/31e4d85a-67c0-40d2-9d88-240ff17ad7ba HTTP/1.1
 Accept: application/json
 Host: localhost:8080</code></pre>
 </div>
@@ -960,6 +960,467 @@ X-Frame-Options: DENY</code></pre>
 <p><code>EmployeeController</code></p>
 </div>
 <div class="paragraph">
+<p>GET EMPLOYEEs</p>
+</div>
+<div class="paragraph">
+<p>One showing how to make a request using cUrl:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://localhost:8080/api/v1/dealer/employees' -i -X GET \
+    -H 'Accept: application/json'</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>One showing HTTP request:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">GET /api/v1/dealer/employees HTTP/1.1
+Accept: application/json
+Host: localhost:8080</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>And one showing the HTTP response:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 200 OK
+Content-Type: application/json
+X-Content-Type-Options: nosniff
+X-XSS-Protection: 1; mode=block
+Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Pragma: no-cache
+Expires: 0
+X-Frame-Options: DENY
+Content-Length: 124
+
+[{"employeeId":null,"firstname":null,"lastname":null,"birthdate":null,"phone":null,"email":null,"username":null,"acl":null}]</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Response Body:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code>[{"employeeId":null,"firstname":null,"lastname":null,"birthdate":null,"phone":null,"email":null,"username":null,"acl":null}]</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>GET EMPLOYEE</p>
+</div>
+<div class="paragraph">
+<p>One showing how to make a request using cURL:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://localhost:8080/api/v1/dealer/employees/9f8902d3-ff46-4ec2-ab98-26ad9d560108' -i -X GET \
+    -H 'Accept: application/json'</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>One showing the HTTP request:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">GET /api/v1/dealer/employees/9f8902d3-ff46-4ec2-ab98-26ad9d560108 HTTP/1.1
+Accept: application/json
+Host: localhost:8080</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>And one showing the HTTP response:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 200 OK
+Content-Type: application/json
+X-Content-Type-Options: nosniff
+X-XSS-Protection: 1; mode=block
+Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Pragma: no-cache
+Expires: 0
+X-Frame-Options: DENY
+Content-Length: 122
+
+{"employeeId":null,"firstname":null,"lastname":null,"birthdate":null,"phone":null,"email":null,"username":null,"acl":null}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Response Body:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code>{"employeeId":null,"firstname":null,"lastname":null,"birthdate":null,"phone":null,"email":null,"username":null,"acl":null}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Response Fields:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Path</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>employeeId</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>UUDI</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Employee Id</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>firstname</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Null</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Firstname of the Employee</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>lastname</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Null</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Lastname of the Employee</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>birthdate</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Null</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Birthdate of the Employee</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>phone</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Null</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Employees phone number</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>email</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Null</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Employees email address</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>username</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Null</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Employees username</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>acl</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Null</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">List of employees authorities</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>SAVE EMPLOYEE</p>
+</div>
+<div class="paragraph">
+<p>One showing how to make a request using cURL:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://localhost:8080/api/v1/dealer/employees' -i -X POST \
+    -H 'Content-Type: application/json' \
+    -d '{"employeeId":null,"firstname":"John","lastname":"Doe","birthdate":"1970-01-02","phone":"070-1234567","email":"john@mail.com","username":"johnDoe","acl":["EMPLOYEE"],"password":"password"}'</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>One showing the HTTP request:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">POST /api/v1/dealer/employees HTTP/1.1
+Content-Type: application/json
+Content-Length: 188
+Host: localhost:8080
+
+{"employeeId":null,"firstname":"John","lastname":"Doe","birthdate":"1970-01-02","phone":"070-1234567","email":"john@mail.com","username":"johnDoe","acl":["EMPLOYEE"],"password":"password"}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>And one showing the HTTP response:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 201 Created
+Location: /api/v1/dealer/employees/null
+Content-Type: application/json
+X-Content-Type-Options: nosniff
+X-XSS-Protection: 1; mode=block
+Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Pragma: no-cache
+Expires: 0
+X-Frame-Options: DENY
+Content-Length: 122
+
+{"employeeId":null,"firstname":null,"lastname":null,"birthdate":null,"phone":null,"email":null,"username":null,"acl":null}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Response Body:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code>{"employeeId":null,"firstname":null,"lastname":null,"birthdate":null,"phone":null,"email":null,"username":null,"acl":null}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Request Fields:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Path</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>firstname</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Firstname of the Employee</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>lastname</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Lastname of the Employee</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>birthdate</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Birthdate of the Employee</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>phone</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Employees phone number</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>email</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Employees email address</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>username</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Employees username</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>password</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Employees password</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>acl</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Array</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">List of employees authorities</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Response Fields:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Path</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>employeeId</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Null</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Employee Id</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>firstname</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Null</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Firstname of the Employee</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>lastname</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Null</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Lastname of the Employee</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>birthdate</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>class java.time.LocalDate</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Birthdate of the Employee</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>phone</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Null</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Employees phone number</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>email</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Null</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Employees email address</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>username</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Null</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Employees username</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>acl</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Null</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">List of employees authorities</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>UPDATE EMPLOYEE</p>
+</div>
+<div class="paragraph">
+<p>One showing how to make a request using cURL:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://localhost:8080/api/v1/dealer/employees/db9cfd7d-69e1-4ea0-8b54-49df47b00284' -i -X PUT \
+    -H 'Content-Type: application/json' \
+    -d '{"employeeId":null,"firstname":"John","lastname":"Doe","birthdate":"1970-01-02","phone":"070-1234567","email":"john@mail.com","username":"johnDoe","acl":["EMPLOYEE"],"password":"password"}'</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>One showing the HTTP request:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">PUT /api/v1/dealer/employees/db9cfd7d-69e1-4ea0-8b54-49df47b00284 HTTP/1.1
+Content-Type: application/json
+Content-Length: 188
+Host: localhost:8080
+
+{"employeeId":null,"firstname":"John","lastname":"Doe","birthdate":"1970-01-02","phone":"070-1234567","email":"john@mail.com","username":"johnDoe","acl":["EMPLOYEE"],"password":"password"}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>And one showing the HTTP response:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 204 No Content
+X-Content-Type-Options: nosniff
+X-XSS-Protection: 1; mode=block
+Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Pragma: no-cache
+Expires: 0
+X-Frame-Options: DENY</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Request Fields</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Path</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>firstname</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Firstname of the Employee</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>lastname</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Lastname of the Employee</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>birthdate</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Birthdate of the Employee</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>phone</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Employees phone number</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>email</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Employees email address</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>username</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Employees username</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>password</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Employees password</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>acl</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Array</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">List of employees authorities</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>DELETE EMPLOYEE</p>
+</div>
+<div class="paragraph">
+<p>One showing how to make a request using cURL:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://localhost:8080/api/v1/dealer/employees/b4dfcd6c-314c-4645-8771-ed1730af83ae' -i -X DELETE \
+    -H 'Accept: application/json'</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>One showing the HTTP request:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">DELETE /api/v1/dealer/employees/b4dfcd6c-314c-4645-8771-ed1730af83ae HTTP/1.1
+Accept: application/json
+Host: localhost:8080</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>And one showing the HTTP response:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 204 No Content
+X-Content-Type-Options: nosniff
+X-XSS-Protection: 1; mode=block
+Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Pragma: no-cache
+Expires: 0
+X-Frame-Options: DENY</code></pre>
+</div>
+</div>
+<div class="paragraph">
 <p><code>EngineController</code></p>
 </div>
 <div class="paragraph">
@@ -970,7 +1431,7 @@ X-Frame-Options: DENY</code></pre>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2020-11-02 15:36:43 +0100
+Last updated 2020-11-03 13:08:23 +0100
 </div>
 </div>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/github.min.css">
