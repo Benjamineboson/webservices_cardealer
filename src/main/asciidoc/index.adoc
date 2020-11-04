@@ -104,7 +104,7 @@ include::{snippets}/v1/car-delete/http-response.adoc[]
 
 `EmployeeController`
 
-GET EMPLOYEEs
+GET EMPLOYEES
 
 One showing how to make a request using cUrl:
 
@@ -202,4 +202,196 @@ include::{snippets}/v1/employee-delete/http-response.adoc[]
 
 `EngineController`
 
+GET ENGINES
+
+One showing how to make a request using cUrl:
+
+include::{snippets}/v1/engines-get-all/curl-request.adoc[]
+
+One showing HTTP request:
+
+include::{snippets}/v1/engines-get-all/http-request.adoc[]
+
+And one showing the HTTP response:
+
+include::{snippets}/v1/engines-get-all/http-response.adoc[]
+
+Response Body:
+
+include::{snippets}/v1/engines-get-all/response-body.adoc[]
+
+GET ENGINE
+
+One showing how to make a request using cURL:
+
+include::{snippets}/v1/engines-get-one/curl-request.adoc[]
+
+One showing the HTTP request:
+
+include::{snippets}/v1/engines-get-one/http-request.adoc[]
+
+And one showing the HTTP response:
+
+include::{snippets}/v1/engines-get-one/http-response.adoc[]
+
+Response Body:
+
+include::{snippets}/v1/engines-get-one/response-body.adoc[]
+
+Response Fields:
+
+include::{snippets}/v1/engines-get-one/response-fields.adoc[]
+
+SAVE ENGINE
+
+One showing how to make a request using cURL:
+
+include::{snippets}/v1/engine-new/curl-request.adoc[]
+
+One showing the HTTP request:
+
+include::{snippets}/v1/engine-new/http-request.adoc[]
+
+And one showing the HTTP response:
+
+include::{snippets}/v1/engine-new/http-response.adoc[]
+
+Response Body:
+include::{snippets}/v1/engine-new/response-body.adoc[]
+
+Request Fields:
+
+include::{snippets}/v1/engine-new/request-fields.adoc[]
+
+Response Fields:
+
+include::{snippets}/v1/engine-new/response-fields.adoc[]
+
+UPDATE ENGINE
+
+One showing how to make a request using cURL:
+
+include::{snippets}/v1/engine-update/curl-request.adoc[]
+
+One showing the HTTP request:
+
+include::{snippets}/v1/engine-update/http-request.adoc[]
+
+And one showing the HTTP response:
+
+include::{snippets}/v1/engine-update/http-response.adoc[]
+
+Request Fields
+include::{snippets}/v1/engine-update/request-fields.adoc[]
+
+DELETE ENGINE
+
+One showing how to make a request using cURL:
+
+include::{snippets}/v1/engine-delete/curl-request.adoc[]
+
+One showing the HTTP request:
+
+include::{snippets}/v1/engine-delete/http-request.adoc[]
+
+And one showing the HTTP response:
+
+include::{snippets}/v1/engine-delete/http-response.adoc[]
+
 `TiresController`
+
+GET TIRES
+
+One showing how to make a request using cUrl:
+
+include::{snippets}/v1/tires-get-all/curl-request.adoc[]
+
+One showing HTTP request:
+
+include::{snippets}/v1/tires-get-all/http-request.adoc[]
+
+And one showing the HTTP response:
+
+include::{snippets}/v1/tires-get-all/http-response.adoc[]
+
+Response Body:
+
+include::{snippets}/v1/tires-get-all/response-body.adoc[]
+
+GET TIRES
+
+One showing how to make a request using cURL:
+
+include::{snippets}/v1/tires-get-one/curl-request.adoc[]
+
+One showing the HTTP request:
+
+include::{snippets}/v1/tires-get-one/http-request.adoc[]
+
+And one showing the HTTP response:
+
+include::{snippets}/v1/tires-get-one/http-response.adoc[]
+
+Response Body:
+
+include::{snippets}/v1/tires-get-one/response-body.adoc[]
+
+Response Fields:
+
+include::{snippets}/v1/tires-get-one/response-fields.adoc[]
+
+SAVE TIRES
+
+One showing how to make a request using cURL:
+
+include::{snippets}/v1/tires-new/curl-request.adoc[]
+
+One showing the HTTP request:
+
+include::{snippets}/v1/tires-new/http-request.adoc[]
+
+And one showing the HTTP response:
+
+include::{snippets}/v1/tires-new/http-response.adoc[]
+
+Response Body:
+include::{snippets}/v1/tires-new/response-body.adoc[]
+
+Request Fields:
+
+include::{snippets}/v1/tires-new/request-fields.adoc[]
+
+Response Fields:
+
+include::{snippets}/v1/tires-new/response-fields.adoc[]
+
+UPDATE TIRES
+
+One showing how to make a request using cURL:
+
+include::{snippets}/v1/tires-update/curl-request.adoc[]
+
+One showing the HTTP request:
+
+include::{snippets}/v1/tires-update/http-request.adoc[]
+
+And one showing the HTTP response:
+
+include::{snippets}/v1/tires-update/http-response.adoc[]
+
+Request Fields
+include::{snippets}/v1/tires-update/request-fields.adoc[]
+
+DELETE TIRES
+
+One showing how to make a request using cURL:
+
+include::{snippets}/v1/tires-delete/curl-request.adoc[]
+
+One showing the HTTP request:
+
+include::{snippets}/v1/tires-delete/http-request.adoc[]
+
+And one showing the HTTP response:
+
+include::{snippets}/v1/tires-delete/http-response.adoc[]
