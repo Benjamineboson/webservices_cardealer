@@ -151,7 +151,7 @@ public class CarControllerTest {
                 .andExpect(status().isNoContent())
                 .andDo(document("v1/car-update",
                         pathParameters(
-                                parameterWithName("id").description("UUID string of desired course to update.")
+                                parameterWithName("id").description("UUID string of desired car to update.")
                         ),
                         requestFields(
                                 fields.withPath("carId").ignored(),
@@ -206,5 +206,4 @@ public class CarControllerTest {
                     .collectionToDelimitedString(this.constraintDescriptions.descriptionsForProperty(path), ". ")));
         }
     }
-
 }

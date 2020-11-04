@@ -76,7 +76,7 @@ public class EmployeeControllerTest {
                 .andExpect(status().isOk())
                 .andDo(document("v1/employees-get-one",
                         pathParameters(
-                                parameterWithName("id").description("UUID string of desired car to get.")
+                                parameterWithName("id").description("UUID string of desired employee to get.")
                         ),
                         responseFields(
                                 fieldWithPath("employeeId").type("UUDI").description("Employee Id"),
@@ -148,7 +148,7 @@ public class EmployeeControllerTest {
                 .andExpect(status().isNoContent())
                 .andDo(document("v1/employee-update",
                         pathParameters(
-                                parameterWithName("id").description("UUID string of desired car to get.")
+                                parameterWithName("id").description("UUID string of desired employee to update.")
                         ),
                         requestFields(
                                 fields.withPath("employeeId").ignored(),

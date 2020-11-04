@@ -56,7 +56,7 @@ public class TiresService {
                 String.format("Tires with this id %s. , could not be found", id)));
     }
 
-    @CachePut(value = "carCache", key = "#result.tiresId")
+    @CachePut(value = "carCache")
     public Tires saveNewTires(Tires tires) {
         return tiresRepository.save(tires);
     }

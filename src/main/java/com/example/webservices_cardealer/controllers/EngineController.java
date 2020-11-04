@@ -9,6 +9,7 @@ import org.springframework.security.access.annotation.Secured;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
+import java.net.URI;
 import java.util.List;
 
 @RestController
@@ -35,7 +36,9 @@ public class EngineController {
     @Secured("ROLE_ADMIN")
     @PostMapping
     public ResponseEntity<Engine> saveNewEngine (@Validated @RequestBody Engine engine){
-        return ResponseEntity.ok(engineService.saveNewEngine(engine));
+        var savedEngine = engineService.saveNewEngine(engine);
+        var uri = URI.create("/api/v1/dealer/engines" + savedEngine.getEngineId());
+        return ResponseEntity.created(uri).body(savedEngine);
     }
 
     @Secured("ROLE_ADMIN")

@@ -57,7 +57,7 @@ public class EngineService {
                 String.format("Engine with this id %s. , could not be found", id)));
     }
 
-    @CachePut(value = "carCache", key = "#result.engineId")
+    @CachePut(value = "carCache")
     public Engine saveNewEngine(Engine engine){
         return engineRepository.save(engine);
     }

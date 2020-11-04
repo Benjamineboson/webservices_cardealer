@@ -1,6 +1,5 @@
 package com.example.webservices_cardealer.controllers;
 
-import com.example.webservices_cardealer.entities.Car;
 import com.example.webservices_cardealer.entities.Tires;
 import com.example.webservices_cardealer.services.TiresService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,6 +9,7 @@ import org.springframework.security.access.annotation.Secured;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
+import java.net.URI;
 import java.util.List;
 
 @RestController
@@ -36,7 +36,9 @@ public class TiresController {
     @Secured("ROLE_ADMIN")
     @PostMapping
     public ResponseEntity<Tires> saveNewTires (@Validated @RequestBody Tires tires){
-        return ResponseEntity.ok(tiresService.saveNewTires(tires));
+        var savedTires = tiresService.saveNewTires(tires);
+        var uri = URI.create("/api/v1/dealer/tires/" + savedTires.getTiresId());
+        return ResponseEntity.created(uri).body(savedTires);
     }
 
     @Secured("ROLE_ADMIN")
