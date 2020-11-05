@@ -1,0 +1,7 @@
+[source,http,options="nowrap"]
+----
+DELETE /api/v1/dealer/cars/b43ee41c-7834-412b-9a2b-6b6fa9b41db0 HTTP/1.1
+Accept: application/json
+Host: localhost:8080
+
+----

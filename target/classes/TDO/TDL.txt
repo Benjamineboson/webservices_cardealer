@@ -1,0 +1,39 @@
+G krav
+X Alla REST-metoder ska följa Best Practices i möjligaste mån
+X Alla REST-metoder skall returnera korrekt HTTP Status-kod
+X Alla requests ska sparas i databas, för att minimera hämtningar från PokéAPI
+X Valfri databas (MongoDB, MySQL etc), tänk på att databasen ska vara tillgänglig
+  vid inlämning
+X Det ska finnas säkerhet i form av autentisering/inloggning och ACL
+X Det ska gå att filtrera och sortera sökresultatet
+
+VG krav
+X Det ska finnas minst 4 entiteter
+X Man ska kunna söka på fler entiteter än Car, t ex Engine, Gear,
+X Det ska gå att söka på en entitet med minst fyra parametrar
+X Alla entities ska valideras innan dem sparas i databas
+X API-dokumentation ska finnas
+- Hemsidan/startsidan till er service ska presentera API-dokumentationen
+X Högre krav på att lämpliga HTTP-status koder returneras
+X Högre krav på säkerhet, t.ex. endast admin får spara till och radera från DB
+- Det ska finnas en distribuerad version (byggd jar-fil) som kan köras från
+  terminalen (command line).
+
+
+X Bilhandlaren ska kunna lägga upp nya bilar till salu i deras system, uppdatera och radera befintliga.
+
+X Det ska gå att hämta specifika bilar baserat på ett registreringsnummer.
+
+X Det ska även gå att hämta alla bilar som finns i systemet samt filtrera sökresultatet.
+
+X Vissa funktioner ska vara begränsade för högre behörigheter.
+
+X Kunder ska kunna söka i systemet utan att vara inloggade men dem ska inte kunna se all data om bilarna.
+
+X Personal som söker ska se allt, personal med högre behörighet så som vd, avdelningschefer och andra med
+  adminbehörighet ska kunna ändra, lägga till och radera data.
+
+X Det ska finnas status på bilar (ex. i lager, såld, reserverad, skrotad).
+
+
+

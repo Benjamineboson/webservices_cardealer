@@ -1,0 +1,44 @@
+|===
+|Path|Type|Description
+
+|`+registrationNumber+`
+|`+String+`
+|Car registration number
+
+|`+brand+`
+|`+String+`
+|Car brand
+
+|`+model+`
+|`+String+`
+|Car brand
+
+|`+color+`
+|`+String+`
+|Car color
+
+|`+yearModel+`
+|`+String+`
+|Year of the creation
+
+|`+engine+`
+|`+Null+`
+|Car engine type
+
+|`+tires+`
+|`+Null+`
+|Car tires type
+
+|`+sold+`
+|`+Boolean+`
+|true/false
+
+|`+inStock+`
+|`+Boolean+`
+|true/false
+
+|`+reserved+`
+|`+Boolean+`
+|true/false
+
+|===

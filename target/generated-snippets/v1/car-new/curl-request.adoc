@@ -1,0 +1,6 @@
+[source,bash]
+----
+$ curl 'http://localhost:8080/api/v1/dealer/cars' -i -X POST \
+    -H 'Content-Type: application/json' \
+    -d '{"carId":null,"registrationNumber":"ABC123","brand":"Volvo","model":"V90","color":"Black","yearModel":"2020","engine":null,"tires":null,"reserved":false,"inStock":true,"sold":false}'
+----

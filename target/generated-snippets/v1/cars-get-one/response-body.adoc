@@ -1,0 +1,4 @@
+[source,options="nowrap"]
+----
+{"carId":null,"registrationNumber":null,"brand":null,"model":null,"color":null,"yearModel":null,"engine":null,"tires":null,"reserved":false,"inStock":false,"sold":false}
+----

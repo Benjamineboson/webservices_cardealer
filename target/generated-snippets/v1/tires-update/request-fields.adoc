@@ -1,0 +1,20 @@
+|===
+|Path|Type|Description
+
+|`+brand+`
+|`+String+`
+|Tires brand
+
+|`+dimension+`
+|`+String+`
+|Tires dimensions
+
+|`+tireType+`
+|`+String+`
+|Type of Tires
+
+|`+yearModel+`
+|`+String+`
+|Year of creation
+
+|===

@@ -1,0 +1,4 @@
+[source,options="nowrap"]
+----
+{"tiresId":null,"brand":null,"dimension":null,"tireType":null,"yearModel":null}
+----

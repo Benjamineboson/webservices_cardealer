@@ -1,0 +1,5 @@
+[source,bash]
+----
+$ echo '{"engineId":null,"brand":"Volvo","model":"D4","cylinders":"4","fuelType":"Diesel"}' | http POST 'http://localhost:8080/api/v1/dealer/engines' \
+    'Content-Type:application/json'
+----

@@ -1,0 +1,8 @@
+.+/api/v1/dealer/tires/{id}+
+|===
+|Parameter|Description
+
+|`+id+`
+|UUID string of desired tires to update.
+
+|===

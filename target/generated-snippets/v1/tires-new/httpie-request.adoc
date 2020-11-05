@@ -1,0 +1,5 @@
+[source,bash]
+----
+$ echo '{"tiresId":null,"brand":"Bridgestone","dimension":"180/60 R18 90H","tireType":"Summer","yearModel":"2020"}' | http POST 'http://localhost:8080/api/v1/dealer/tires' \
+    'Content-Type:application/json'
+----

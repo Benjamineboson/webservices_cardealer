@@ -1,0 +1,36 @@
+|===
+|Path|Type|Description
+
+|`+employeeId+`
+|`+Null+`
+|Employee Id
+
+|`+firstname+`
+|`+Null+`
+|Firstname of the Employee
+
+|`+lastname+`
+|`+Null+`
+|Lastname of the Employee
+
+|`+birthdate+`
+|`+class java.time.LocalDate+`
+|Birthdate of the Employee
+
+|`+phone+`
+|`+Null+`
+|Employees phone number
+
+|`+email+`
+|`+Null+`
+|Employees email address
+
+|`+username+`
+|`+Null+`
+|Employees username
+
+|`+acl+`
+|`+Null+`
+|List of employees authorities
+
+|===

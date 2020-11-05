@@ -1,0 +1,4 @@
+[source,options="nowrap"]
+----
+{"engineId":null,"brand":"Volvo","model":"D4","cylinders":"4","fuelType":"Diesel"}
+----

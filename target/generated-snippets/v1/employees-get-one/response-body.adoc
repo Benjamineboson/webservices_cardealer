@@ -1,0 +1,4 @@
+[source,options="nowrap"]
+----
+{"employeeId":null,"firstname":null,"lastname":null,"birthdate":null,"phone":null,"email":null,"username":null,"acl":null}
+----

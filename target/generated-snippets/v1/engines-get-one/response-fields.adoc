@@ -1,0 +1,24 @@
+|===
+|Path|Type|Description
+
+|`+engineId+`
+|`+Null+`
+|Engine ID
+
+|`+brand+`
+|`+Null+`
+|Engine brand
+
+|`+model+`
+|`+Null+`
+|Engine model
+
+|`+cylinders+`
+|`+Null+`
+|Number of cylinders
+
+|`+fuelType+`
+|`+Null+`
+|Type of fuel
+
+|===

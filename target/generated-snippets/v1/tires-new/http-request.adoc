@@ -1,0 +1,9 @@
+[source,http,options="nowrap"]
+----
+POST /api/v1/dealer/tires HTTP/1.1
+Content-Type: application/json
+Content-Length: 106
+Host: localhost:8080
+
+{"tiresId":null,"brand":"Bridgestone","dimension":"180/60 R18 90H","tireType":"Summer","yearModel":"2020"}
+----

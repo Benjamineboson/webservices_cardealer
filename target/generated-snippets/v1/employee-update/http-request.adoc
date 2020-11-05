@@ -1,0 +1,9 @@
+[source,http,options="nowrap"]
+----
+PUT /api/v1/dealer/employees/7f557074-39ed-4be9-a9d7-22c39792d2f3 HTTP/1.1
+Content-Type: application/json
+Content-Length: 188
+Host: localhost:8080
+
+{"employeeId":null,"firstname":"John","lastname":"Doe","birthdate":"1970-01-02","phone":"070-1234567","email":"john@mail.com","username":"johnDoe","acl":["EMPLOYEE"],"password":"password"}
+----

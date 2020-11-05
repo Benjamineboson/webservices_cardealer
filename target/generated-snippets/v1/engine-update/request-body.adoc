@@ -1,0 +1,4 @@
+[source,options="nowrap"]
+----
+{"engineId":"6037c17c-96a0-4eb0-afa4-ace8086813bd","brand":"Volvo","model":"D4","cylinders":"4","fuelType":"Diesel"}
+----

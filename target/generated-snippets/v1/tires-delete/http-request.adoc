@@ -1,0 +1,7 @@
+[source,http,options="nowrap"]
+----
+DELETE /api/v1/dealer/tires/a4ed5d9d-871b-4489-a9c0-3ea3061fe943 HTTP/1.1
+Accept: application/json
+Host: localhost:8080
+
+----

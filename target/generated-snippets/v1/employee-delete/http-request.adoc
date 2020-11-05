@@ -1,0 +1,7 @@
+[source,http,options="nowrap"]
+----
+DELETE /api/v1/dealer/employees/84ea3ca6-81e5-44a6-9e4c-0eaf7691c646 HTTP/1.1
+Accept: application/json
+Host: localhost:8080
+
+----

@@ -1,0 +1,5 @@
+[source,bash]
+----
+$ curl 'http://localhost:8080/api/v1/dealer/tires/a4ed5d9d-871b-4489-a9c0-3ea3061fe943' -i -X DELETE \
+    -H 'Accept: application/json'
+----

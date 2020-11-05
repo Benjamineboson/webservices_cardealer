@@ -1,0 +1,7 @@
+[source,http,options="nowrap"]
+----
+GET /api/v1/dealer/cars/ffed7b79-1772-4bb0-976e-d0fdfce6c5cc HTTP/1.1
+Accept: application/json
+Host: localhost:8080
+
+----

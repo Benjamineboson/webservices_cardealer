@@ -1,0 +1,6 @@
+[source,bash]
+----
+$ curl 'http://localhost:8080/api/v1/dealer/cars/6f3b8805-9db0-4a0f-97b5-3fe844aa18e2' -i -X PUT \
+    -H 'Content-Type: application/json' \
+    -d '{"carId":"1c83e20e-7bcd-4173-94da-1a3ac57d5ef9","registrationNumber":"ABC123","brand":"Volvo","model":"V90","color":"Black","yearModel":"2020","engine":null,"tires":null,"reserved":false,"inStock":true,"sold":false}'
+----

@@ -1,0 +1,4 @@
+x Caching for Car
+x Caching for Engine
+x Caching for Tires
+x Caching for Employee

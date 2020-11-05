@@ -1,0 +1,8 @@
+.+/api/v1/dealer/engines/{id}+
+|===
+|Parameter|Description
+
+|`+id+`
+|UUID string of desired engine to update.
+
+|===

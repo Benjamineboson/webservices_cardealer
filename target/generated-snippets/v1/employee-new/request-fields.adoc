@@ -1,0 +1,36 @@
+|===
+|Path|Type|Description
+
+|`+firstname+`
+|`+String+`
+|Firstname of the Employee
+
+|`+lastname+`
+|`+String+`
+|Lastname of the Employee
+
+|`+birthdate+`
+|`+String+`
+|Birthdate of the Employee
+
+|`+phone+`
+|`+String+`
+|Employees phone number
+
+|`+email+`
+|`+String+`
+|Employees email address
+
+|`+username+`
+|`+String+`
+|Employees username
+
+|`+password+`
+|`+String+`
+|Employees password
+
+|`+acl+`
+|`+Array+`
+|List of employees authorities
+
+|===

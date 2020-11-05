@@ -1,0 +1,8 @@
+.+/api/v1/dealer/employees/{id}+
+|===
+|Parameter|Description
+
+|`+id+`
+|UUID string of desired employee to update.
+
+|===

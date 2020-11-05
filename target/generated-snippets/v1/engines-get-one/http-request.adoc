@@ -1,0 +1,7 @@
+[source,http,options="nowrap"]
+----
+GET /api/v1/dealer/engines/fd10d948-06a7-4944-a647-eb0f92dde3e7 HTTP/1.1
+Accept: application/json
+Host: localhost:8080
+
+----

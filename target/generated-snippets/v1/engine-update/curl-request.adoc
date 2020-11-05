@@ -1,0 +1,6 @@
+[source,bash]
+----
+$ curl 'http://localhost:8080/api/v1/dealer/engines/7ca76002-4209-4be7-86c3-3c0967b14bf4' -i -X PUT \
+    -H 'Content-Type: application/json' \
+    -d '{"engineId":"6037c17c-96a0-4eb0-afa4-ace8086813bd","brand":"Volvo","model":"D4","cylinders":"4","fuelType":"Diesel"}'
+----

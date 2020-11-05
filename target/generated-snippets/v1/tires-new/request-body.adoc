@@ -1,0 +1,4 @@
+[source,options="nowrap"]
+----
+{"tiresId":null,"brand":"Bridgestone","dimension":"180/60 R18 90H","tireType":"Summer","yearModel":"2020"}
+----

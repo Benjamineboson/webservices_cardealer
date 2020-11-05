@@ -1,0 +1,48 @@
+|===
+|Path|Type|Description
+
+|`+carId+`
+|`+Null+`
+|Car ID
+
+|`+registrationNumber+`
+|`+Null+`
+|Car registration number
+
+|`+brand+`
+|`+Null+`
+|Car brand
+
+|`+model+`
+|`+Null+`
+|Car model
+
+|`+color+`
+|`+Null+`
+|Car color
+
+|`+yearModel+`
+|`+Null+`
+|Year the of creation
+
+|`+engine+`
+|`+class com.example.webservices_cardealer.entities.Engine+`
+|Car engine type
+
+|`+tires+`
+|`+class com.example.webservices_cardealer.entities.Tires+`
+|Car tires type
+
+|`+sold+`
+|`+Boolean+`
+|true/false
+
+|`+inStock+`
+|`+Boolean+`
+|true/false
+
+|`+reserved+`
+|`+Boolean+`
+|true/false
+
+|===

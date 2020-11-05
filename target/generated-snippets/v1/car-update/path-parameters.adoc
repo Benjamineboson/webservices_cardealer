@@ -1,0 +1,8 @@
+.+/api/v1/dealer/cars/{id}+
+|===
+|Parameter|Description
+
+|`+id+`
+|UUID string of desired car to update.
+
+|===

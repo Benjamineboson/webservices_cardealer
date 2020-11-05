@@ -1,0 +1,5 @@
+[source,bash]
+----
+$ curl 'http://localhost:8080/api/v1/dealer/employees/84ea3ca6-81e5-44a6-9e4c-0eaf7691c646' -i -X DELETE \
+    -H 'Accept: application/json'
+----

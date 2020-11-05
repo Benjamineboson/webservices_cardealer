@@ -1,0 +1,5 @@
+[source,bash]
+----
+$ echo '{"tiresId":"6c44e4e8-ddab-435c-91f5-86585f9011cf","brand":"Bridgestone","dimension":"180/60 R18 90H","tireType":"Summer","yearModel":"2020"}' | http PUT 'http://localhost:8080/api/v1/dealer/tires/d08cbca4-a856-4529-8a51-3ca9b8883f76' \
+    'Content-Type:application/json'
+----
